@@ -1,0 +1,316 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  background: url('uploads/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* Books Section Styles */
+.books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.books-header .card__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Grid for displaying books */
+.book__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card Styles */
+.card__article {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+/* Hover effect: makes the card float */
+.card__article:hover {
+  transform: translateY(-10px); /* Moves the card up */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Adds shadow for a floating effect */
+}
+
+.card__img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth zoom effect on image */
+}
+
+.card__article:hover .card__img {
+  transform: scale(1.05); /* Slight zoom-in effect on image */
+}
+
+.card__data {
+  padding: 1rem;
+}
+
+.card__name {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.card__category {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.card__price {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card__description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.card__like {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #ff6b6b;
+}
+
+.card__buy {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.card__buy:hover {
+  background-color: #45a049;
+}
+
+/* Dropdown Filter Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.dropdown-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.dropdown-btn:hover {
+  background-color: #45a049;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+label input {
+  margin-right: 10px;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Adds space between the title and search bar */
+}
+
+.header__input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 400px; /* Adjust the width of the search bar */
+  margin-left: 20px;
+  height: 40px;
+}
+
+.header__input:focus {
+  border-color: #4CAF50; /* Focus effect with green border */
+  outline: none;
+}
+
+.header__input::placeholder {
+  color: #888; /* Light gray placeholder text */
+}
+
+.card__favorite {
+  padding: 10px 20px;
+  background-color: #ff6b6b; /* Red background for favorite button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.card__favorite:hover {
+  background-color: #e54b4b;
+}
+/* Modal Background Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+  padding-top: 50px; /* Adjusted padding to center the modal */
+  transition: opacity 0.3s ease;
+}
+
+/* Modal Content (form container) */
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Smaller width for a compact form */
+  max-width: 90%; /* Ensures it doesn’t stretch too much on small screens */
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Modal close button */
+.close {
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Modal Title */
+.modal h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+  border-color: #3498db;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+button[type="submit"]:active {
+  background-color: #21618c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .modal-content {
+      width: 80%;
+      padding: 20px;
+  }
+
+  .modal h2 {
+      font-size: 20px;
+  }
+}
+
+/* Modal Animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
